@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <style>
+    body {
+      display: grid;
+      place-content: center;
+    }
+
+    .snapcontainer {
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
+      position: relative;
+      display: block;
+      white-space: nowrap;
+      height: 40vh;
+    }
+
+    .snapcontainer .slide_thumbnail {
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .screen {
+      width: 40vh;
+    }
+    
+    #bigscreen {
+      height: 20%;
+      border-radius: 25px;
+      border: solid 1px black;
+      margin-bottom: 25px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+      text-align: center;
+      place-content: center center;
+    }
+
+    #bigscreen img {
+      height: 40%;
+      width: 80%;
+    }
+
+    .slide_thumbnail img {
+      height: 80%;
+      width: 80%;
+    }
+
+    .slide_thumbnail {
+      display: inline-block;
+      border: solid 1px black;
+      height: 80%;
+      width: 80%;
+      margin-right: 5%;
+      border-radius: 25px;
+      position: relative;
+    }
+
+    .delete_button {
+      background-color: red;
+      height: calc(0.005 * min(100vw, 100vh));
+      width: calc(0.005 * min(100vw, 100vh));;
+      border-radius: 50%;
+    }
+
+    #bigScreenImage {
+      backface-visibility: hidden;
+    }
+
+    #bigScreenImageText {
+      /* transform: rotateY(180deg); */
+      backface-visibility: hidden;
+    }
+
+    .highlighted {
+      border-color: green;
+    }
+
+    .highlightedhint {
+      border-color: yellow;
+    }
+  </style>
+  <div>
+    <h3>Name of Province</h3>
+    <div id="bigscreen" class="screen">
+      <div id="bigScreenImageText"></div>
+    </div>
+    <h3>Click red dot to delete slide.</h3>
+    <div id="carousel" class="snapcontainer screen">
+      <div class="slide_thumbnail" id="box1">
+        <div class="delete_button" id="delete_button1"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box2">
+        <div class="delete_button" id="delete_button2"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box3">
+        <div class="delete_button" id="delete_button3"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box4">
+        <div class="delete_button" id="delete_button4"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box5">
+        <div class="delete_button" id="delete_button5"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box6">
+        <div class="delete_button" id="delete_button6"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box7">
+        <div class="delete_button" id="delete_button7"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box8">
+        <div class="delete_button" id="delete_button8"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box9">
+        <div class="delete_button" id="delete_button9"></div>
+        <img/>
+      </div>
+      <div class="slide_thumbnail" id="box10">
+        <div class="delete_button" id="delete_button10"></div>
+        <img/>
+      </div>
+    </div>
+  </div>
+  <script src="common.js"></script>
+  <script src="snapevents-proxy.js"></script>
+</body>
+
+</html>
