@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <style>
+    body {
+      display: grid;
+      place-content: center;
+    }
+
+    #carousel {
+      height: 80vh;
+      width: 80vw;
+      margin-bottom: 15px;
+      text-align: center;
+      place-content: center center;
+      overflow-x: scroll;
+      white-space: nowrap;
+      scroll-snap-type: x mandatory;
+    }
+    
+    #carousel .slide_thumbnail {
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    #carousel img {
+      height: 80%;
+      width: 80%;
+    }
+
+    #carouselctrl {
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
+      position: relative;
+      display: flex;
+      white-space: nowrap;
+      height: 15vh;
+    }
+
+    #carouselctrl img {
+      height: 80%;
+      width: 100%;
+    }
+
+    .slide_thumbnail {
+      display: inline-block;
+      border: solid 1px black;
+      height: 80%;
+      width: 80%;
+      margin-right: 1%;
+      border-radius: 25px;
+      position: relative;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
+    
+    #carouselctrl .slide_thumbnail {
+      width: 100px;
+      height: 100px;
+    }
+
+    .slide_thumbnail img {
+      height: 80%;
+      width: 80%;
+      backface-visibility: hidden;
+    }
+    
+    .highlighted {
+      border-color: green;
+    }
+
+    .highlightedhint {
+      border-color: yellow;
+    }
+
+    .slide_text {
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+    }
+  </style>
+  <h2 id="notice" style="position: absolute; top: 0px;"></h2>
+  <div id="carousel" class="snapcontainer screen">
+    <div class="slide_thumbnail" id="box1">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box2">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box3">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box4">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box5">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box6">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box7">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box8">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box9">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box10">
+      <div class="slide_text"></div>
+      <img />
+    </div>
+  </div>
+  <div id="carouselctrl" class="snapcontainer screen">
+    <div class="slide_thumbnail" id="box1">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box2">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box3">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box4">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box5">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box6">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box7">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box8">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box9">
+      <img />
+    </div>
+    <div class="slide_thumbnail" id="box10">
+      <img />
+    </div>
+  </div>
+  </div>
+  <script src="common.js"></script>
+  <script src="snapevents.js"></script>
+</body>
+
+</html>
