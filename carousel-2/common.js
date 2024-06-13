@@ -65,9 +65,6 @@ function Emphasize(element, hint=false) {
     element.classList.add(classToAdd);
     const ctrl = slideToCtrlMapping[element.id];
     ctrl.classList.add(classToAdd);
-
-    // bigscreen.style.borderColor = borderColor;
-    // bigScreenImageText.innerHTML = `<h3>${slideToProvinceNameMap[element.id]}</h3>`;
   }
 }
 
@@ -112,15 +109,15 @@ function ConfigureSlideToDeleteButtonMapping() {
 }
   
 window.addEventListener("DOMContentLoaded", () => {
-  const notice = document.getElementById("notice");
+  ConfigureSlideToDeleteButtonMapping();
 
+  const notice = document.getElementById("notice");
   if (window.onscrollsnapchange === undefined) {
     notice.innerText = "Snap Events are not defined.";
     UpdateCurrentSnapTarget();
   } else {
     notice.innerText = "Snap Events are defined.";
   }
-  ConfigureSlideToDeleteButtonMapping();
 });
 
 carousel.addEventListener("scroll", () => {
@@ -132,7 +129,4 @@ carousel.addEventListener("scroll", () => {
   }
 });
 
-carousel.addEventListener("scrollend", () => {
-  // bigscreen.style.borderColor = "black";
-});
 
