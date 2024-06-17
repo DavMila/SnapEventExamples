@@ -1,8 +1,5 @@
 carousel.addEventListener("scrollsnapchange", (evt) => {
   DeEmphasize(hintSnapTarget, /*hint*/true);
-  if (currentSnapTarget === evt.snapTargetInline) {
-    return;
-  }
   DeEmphasize(currentSnapTarget);
   currentSnapTarget = evt.snapTargetInline;
   Emphasize(currentSnapTarget);
