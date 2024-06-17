@@ -1,6 +1,4 @@
-
 carousel.addEventListener("scrollsnapchange", (evt) => {
-  console.log(`snapchange to ${evt.snapTargetInline.id}`);
   DeEmphasize(hintSnapTarget, /*hint*/true);
   if (currentSnapTarget === evt.snapTargetInline) {
     return;
@@ -12,19 +10,13 @@ carousel.addEventListener("scrollsnapchange", (evt) => {
 
 carousel.addEventListener("scrollsnapchanging", (evt) => {
   DeEmphasize(hintSnapTarget, /*hint*/true);
-  if (evt.snapTargetInline === currentSnapTarget) {
-    return;
-  }
   hintSnapTarget = evt.snapTargetInline;
-  Emphasize(hintSnapTarget, /*hint*/true);
+  // Ensure to undo any effects snapchanging away from the
+  // currentSnapTarget may have done.
+  Emphasize(hintSnapTarget, /*hint*/evt.snapTargetInline !== currentSnapTarget);
 });
 
-carousel.addEventListener("scrollend", () => {
-  if (hintSnapTarget != currentSnapTarget) {
-    DeEmphasize(hintSnapTarget, /*hint*/true);
-
-    hintSnapTarget = null;
-    Emphasize(currentSnapTarget);
-    return;
-  }
-});
+function UpdateCurrentSnapTarget() {
+  // Not needed when using snap events, only here to avoid
+  // error in common.js
+}

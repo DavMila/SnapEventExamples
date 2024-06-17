@@ -111,7 +111,7 @@ function ConfigureSlideToDeleteButtonMapping() {
 window.addEventListener("DOMContentLoaded", () => {
   ConfigureSlideToDeleteButtonMapping();
 
-  const notice = document.getElementById("notice");
+  const notice = document.getElementById("supportnotice");
   if (window.onscrollsnapchange === undefined) {
     notice.innerText = "Snap Events are not defined.";
     UpdateCurrentSnapTarget();

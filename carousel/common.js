@@ -96,23 +96,12 @@ function ConfigureSlideToDeleteButtonMapping() {
   
 window.addEventListener("DOMContentLoaded", () => {
   ConfigureSlideToDeleteButtonMapping();
-});
 
-bigscreen.addEventListener("click", () => {
-  // if (bigscreen.style.transform.length === 0) {
-  //   bigscreen.style.transform = "rotateY(180deg)";
-  // } else {
-  //   bigscreen.style.transform = "";
-  // }
+  const notice = document.getElementById("supportnotice");
+  if (window.onscrollsnapchange === undefined) {
+    notice.innerText = "Snap Events are not defined.";
+    UpdateCurrentSnapTarget();
+  } else {
+    notice.innerText = "Snap Events are defined.";
+  }
 });
-
-carousel.addEventListener("scroll", () => {
-  // if (bigscreen.style.transform.length !== 0) {
-  //   bigscreen.style.transform = "";
-  // }
-});
-
-carousel.addEventListener("scrollend", () => {
-  bigscreen.style.borderColor = "black";
-});
-
