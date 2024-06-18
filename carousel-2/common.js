@@ -113,10 +113,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const notice = document.getElementById("supportnotice");
   if (window.onscrollsnapchange === undefined) {
-    notice.innerText = "Snap Events are not defined.";
+    notice.innerText = "User-agent does not support snap events.";
     UpdateCurrentSnapTarget();
   } else {
-    notice.innerText = "Snap Events are defined.";
+    notice.innerText = "User-agent supports snap events.";
   }
 });
 
